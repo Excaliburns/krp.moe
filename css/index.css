@@ -1,15 +1,22 @@
-body {
-  color: #2f2f2f;
+.background-grey {
+  background-color: #2f2f2f;
+}
+
+.white {
+  color: white;
 }
 
 .typewriter {
   text-align: center;
   visibility: hidden;
+  color: white;
 }
 
 #welcome_message {
 text-align: center; 
 font-family: 'Quicksand';
+
+color: white;
 
 opacity: 0;
 transform: translateY(-300%);
@@ -40,14 +47,28 @@ animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
 }
 
+.fadein {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
 
 @keyframes moveToCenterAndFadeIn {
-  from {
-  }
-
   to {
       transform: translateY(0);
       opacity: 1;
   }
 
+}
+
+@keyframes fadeIn {
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
 }
