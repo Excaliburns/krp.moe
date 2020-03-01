@@ -1,10 +1,10 @@
 body {
-    color: #2f2f2f;
+  color: #2f2f2f;
 }
 
 .typewriter {
-    text-align: center;
-    visibility: hidden;
+  text-align: center;
+  visibility: hidden;
 }
 
 #welcome_message {
@@ -24,30 +24,30 @@ animation-timing-function: ease-in-out;
 }
 
 #pfp {
-    display: block;
-    height: auto;
-    width: 20%;
-    margin: auto;
+  display: block;
+  height: auto;
+  width: 20%;
+  margin: auto;
 
-    opacity: 0;
-    transform: translateY(-300%);
+  opacity: 0;
+  transform: translateY(-300%);
 
-    animation-name: moveToCenterAndFadeIn;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
+  animation-name: moveToCenterAndFadeIn;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }
 
 
 @keyframes moveToCenterAndFadeIn {
-    from {
-    }
+  from {
+  }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
 
 }
