@@ -1,0 +1,18 @@
+public final class PortScanResult {
+    private final int portNumber;
+    private final boolean isOpen;
+
+    public PortScanResult(int portNumber, boolean isOpen) {
+        this.portNumber = portNumber;
+        this.isOpen = isOpen;
+    }
+
+
+    public int getPortNumber() {
+        return portNumber;
+    }
+
+    public boolean isOpen() {
+        return isOpen;
+    }
+}
