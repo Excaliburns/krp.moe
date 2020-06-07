@@ -1,35 +1,52 @@
-var text = $('.typewriter').text();
-
-var length = text.length;
-var timeout;
-var character = 0;
-
-
-setTimeout(() => {
-    $(document).ready(function () {
-        $('.typewriter').text("");
-        $('.typewriter').css('visibility', 'visible')
-    });
+var typeWriterText;
+var length;
+var timeOut;
+var char = 1;
 
 
-    (function typeWriter() {
+$(document).ready(function () {
+    if (localStorage.getItem('hasRunTutIntro') == null) {   
+    $('.header-slideIn').addClass('slideIn-anim');
+    
+    typeWriterText = $('.typewriter').text();
+    length = typeWriterText.length;
+    $('.typewriter').text(""); 
 
-        timeout = setTimeout(function () {
-            character++;
-            var type = text.substring(0, character);
-            $('.typewriter').text(type);
-            typeWriter();
-
-
-
-            // stop the animation
-            if (length == character) {
-                clearTimeout(timeout);
-            }
-
-        }, 25);
-
-    }())
+    
+    setTimeout( function() {
+        typeWriter();
+    }, 1750);
 
 
-}, 3000);
+    localStorage.setItem('hasRunTutIntro', true);
+    }
+    else {
+        $('.header-slideIn').addClass('finished-slideIn-anim');
+        $('.fadein').addClass('finished-fadein-anim');
+    }
+
+
+});
+
+function unhideDefaults() {
+    $('.fadein').addClass('fadein-anim');
+}
+
+
+
+function typeWriter() {
+    timeOut = setTimeout(function() {
+        var tempText = typeWriterText.substring(0, char);
+        $('.typewriter').text(tempText);
+        typeWriter();
+
+
+        if (length == char) {
+            clearTimeout(timeOut);
+
+            unhideDefaults();
+        }
+
+        char++;
+    }, 35)
+}

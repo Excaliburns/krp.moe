@@ -8,7 +8,6 @@
 
 .typewriter {
   text-align: center;
-  visibility: hidden;
   color: white;
 }
 
@@ -16,22 +15,33 @@
   font-family: 'Quicksand';
 }
 
+
+.header-slideIn {
+  transform: translateY(-300%);
+  opacity: 0;
+}
+
+.finished-slideIn-anim {
+  animation-name: moveToCenterAndFadeIn;
+  animation-duration: 0ms;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.slideIn-anim {
+  animation-name: moveToCenterAndFadeIn;
+  animation-duration: 1.5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
 #welcome_message {
 text-align: center; 
-
-
 color: white;
-
-opacity: 0;
-transform: translateY(-300%);
-
-animation-name: moveToCenterAndFadeIn;
-animation-duration: 1s;
-animation-delay: 0s;
-animation-fill-mode: forwards;
-animation-iteration-count: 1;
-animation-timing-function: ease-in-out;
-
 }
 
 #pfp {
@@ -39,23 +49,23 @@ animation-timing-function: ease-in-out;
   height: auto;
   width: 20%;
   margin: auto;
+}
 
+.fadein {
   opacity: 0;
-  transform: translateY(-300%);
+}
 
-  animation-name: moveToCenterAndFadeIn;
-  animation-duration: 2s;
-  animation-delay: 1s;
+.fadein-anim {
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
 }
 
-.fadein {
-  opacity: 0;
+.finished-fadein-anim {
   animation-name: fadeIn;
-  animation-duration: 2s;
-  animation-delay: 4s;
+  animation-duration: 0s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
@@ -67,7 +77,6 @@ animation-timing-function: ease-in-out;
       transform: translateY(0);
       opacity: 1;
   }
-
 }
 
 @keyframes fadeIn {
