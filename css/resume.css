@@ -1,28 +1,261 @@
-html {
-    scroll-behavior: smooth;
+* {
+    border: rgb(255, 192, 203, .2) 1px dashed;
 }
 
-.wrapper {
-
+:root {
+    font-size: 16px;
+    font-family: 'Quicksand';
+    --bg-1: #2f2f2f;
+    --bg-2: #473158;
+    --bg-3: #32223f;
+    --text-1: #1f1f1f;
+    --text-2: #c269c5;
 }
 
-.header {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-template-rows: auto;
-    gap: 5%;
-    
-    height: 75px;
+section {
+    opacity: 0;
+    transition: opacity 2s;
 }
-.header-button {
+
+section.fadeInSection {
+    opacity: 1
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(228, 228, 228);
+    background-color: var(--bg-1);
+}
+
+body::-webkit-scrollbar {
+    width: .25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #4f4f4f;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(248, 139, 248);
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.subheading-spacing {
+    margin-top: 3rem;
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--bg-2);
+    transition: width 200ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.nav-item {
+    width: 100%;
+}
+
+.start-last {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: black;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(50ms);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-3);
+    color: var(--text-2);
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.svg-inline--fa {
+    color: var(--text-2);
+    transition: 200ms;
+}
+
+.profile {
+    display: flex;
+}
+
+.profile-image-swapper {
+    display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
+    margin-top: 5rem;
+}
+
+.profile-image-text {
+    display: block;
+    flex-direction: row;
+}
+
+.header-div {
+    margin-top: 7rem;
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+
+    .profile {
+        flex-wrap: wrap;
+        max-width: 250px;
+    }
+
+    .profile-image-swapper {
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .profile-image-text {
+        max-width: 100%
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+    display: block;
+    }
+
+    .profile-image-swapper {
+        height: 250px;
+        width: 250px;
+    }
+
+    .profile-image-text {
+        margin-top: 5rem;
+        margin-left: 1.5rem;
+        max-width: 50vw;
+    }
+}
+
+#fsu {
+    color: #CEB888;
+}
+
+.tiny {
+    font-size: small;
+    margin-top: 0px !important;
+}
+
+.education-details {
+    display: flex;
+}
+
+#edu-location {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+#edu-location p {
+    margin-left: 1rem;
+}
 
 
-    color: red;
-    border: 2px dashed blue;
-    width: 100%;
-    height: 75%;
+#edu-date {
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+#edu-date p {
+    margin-left: 1rem;
+}
+
+
+#likethis {
+    display: inline-block;
+    animation-name: likethis;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: reverse;
+}
+
+#orthis {
+    display: block;
+    animation-name: orthis;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: reverse;
+}
+
+@keyframes likethis {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(300deg);
+    }
+}
+
+@keyframes orthis {
+    0% {
+        font-size: 16px;
+    }
+    50% {
+        font-size: 30px;
+    }
 }

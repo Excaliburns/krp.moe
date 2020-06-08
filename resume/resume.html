@@ -3,18 +3,14 @@
 
 <head>
 
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/d7310f5c9a.js" crossorigin="anonymous"></script>
+
+  <!-- jquery -->
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
 
   <!-- google fonts -->
 
@@ -25,23 +21,207 @@
 
   <meta charset="UTF-8">
 
-  <link type="text/css" rel="stylesheet" href="../css/index.css">
   <link type="text/css" rel="stylesheet" href="../css/resume.css">
 
   <script src="../js/resume.js"></script>
 
 </head>
 <body>
-    <div class="background-grey base-font">
-        <div class="wrapper">
-            <div class="header pt-4 pr-5 pl-5">
-                <h3 class="header-button">
-                  <a href="../index.html" style="text-decoration: none;">home</a>
-                </h3>
-                <h3 class="header-button">ipsum</h3>
-                <h3 class="header-button">dolar</h3>
-                <h3 class="header-button">sit</h3>
-            </div>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#education" class="nav-link">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book-reader" class="svg-inline--fa fa-book-reader fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zM233.59 241.1c-59.33-36.32-155.43-46.3-203.79-49.05C13.55 191.13 0 203.51 0 219.14v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87V252.56c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06V219.14c-.01-15.63-13.56-28.01-29.81-27.09z">
+            </path>
+          </svg>
+          <span class="link-text">Education / Intro</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#work" class="nav-link">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="briefcase" class="svg-inline--fa fa-briefcase fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z">
+            </path>
+          </svg>
+          <span class="link-text">Work Experience</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#leadership" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="svg-inline--fa fa-star fa-w-18" role="img" viewBox="0 0 576 512">
+            <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+          </svg>
+          <span class="link-text">Leadership</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#skills" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+          aria-hidden="true" 
+          focusable="false" 
+          data-prefix="fas" 
+          data-icon="brain" 
+          class="svg-inline--fa fa-brain fa-w-18" 
+          role="img" 
+          viewBox="0 0 576 512">
+          <path fill="currentColor" d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"/>
+          </svg>
+          <span class="link-text">Skills</span>
+        </a>
+      </li>
+      <li class="nav-item start-last">
+        <a href="../code/" class="nav-link">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+            <path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z">
+            </path>
+          </svg>
+        <span class="link-text">Code Here!</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="https://github.com/Excaliburns" target="_blank" class="nav-link">
+          <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+            <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+          </path>
+        </svg>
+        <span class="link-text">GitHub</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" class="svg-inline--fa fa-home fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
+          </path>
+        </svg>
+        <span class="link-text">Home</span>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <main>
+    <p>note - there are placeholder borders for mapping spacing</p>
+    <h1> Hi, I'm Kevin Patlis! </h1>
+
+    <section class="fadeInSection">
+      <div class="profile">
+        <div class="profile-image-swapper">
+          <p> swap between professional picture and personal icon here </p>
         </div>
-    </div>
+        <div class="profile-image-text">
+          <h4>some text about me or something</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla odit ipsum modi, dolore accusamus ea maiores ut officiis facilis assumenda beatae unde, laborum quae. Architecto at alias possimus sequi neque.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla odit ipsum modi, dolore accusamus ea maiores ut officiis facilis assumenda beatae unde, laborum quae. Architecto at alias possimus sequi neque.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="fadeInSection">
+      <div id="education" class="header-div">
+        <h1> Education </h1>
+        <h3 class="subheading-spacing" id="fsu">Florida State University</h3>
+        <p class="bachelors">Bachelors of Science - Information Technology -- 3.8 GPA</p>
+        <div class="education-details">
+          <div id="edu-location">
+            <i class="fas fa-map-marker"></i>
+            <p> Tallahassee, Florida </p>
+          </div>
+          <div id="edu-date">
+            <i class="far fa-calendar-alt"></i>
+            <p> December 2020 </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fadeInSection">
+      <div id="work" class="header-div">
+        <h1> Work Experience </h1>
+        <p> the text below is placeholder text</p>
+        <h3 class="subheading-spacing" id="fsu">Lorem, ipsum</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+        <div class="education-details">
+          <div id="edu-location">
+            <i class="fas fa-map-marker"></i>
+            <p> Tallahassee, Florida </p>
+          </div>
+          <div id="edu-date">
+            <i class="far fa-calendar-alt"></i>
+            <p> December 2020 </p>
+          </div>
+        </div>
+        <ul>
+          <li>Lorem ipsum</li>
+          <li>dolar sit</li>
+          <li>amet consecteur</li>
+        </ul>
+
+        
+        <h3 class="subheading-spacing" id="fsu">Lorem, ipsum</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+        <div class="education-details">
+          <div id="edu-location">
+            <i class="fas fa-map-marker"></i>
+            <p> Tallahassee, Florida </p>
+          </div>
+          <div id="edu-date">
+            <i class="far fa-calendar-alt"></i>
+            <p> December 2020 </p>
+          </div>
+        </div>
+
+        <ul>
+          <li>Lorem ipsum</li>
+          <li>dolar sit</li>
+          <li>amet consecteur</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="fadeInSection">
+      <div id="leadership" class="header-div">
+        <h1> Leadership </h1>
+        <p> the text below is placeholder text</p>
+        
+        <h3 class="subheading-spacing" id="fsu">Lorem, ipsum</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+        <div class="education-details">
+          <div id="edu-location">
+            <i class="fas fa-map-marker"></i>
+            <p> Tallahassee, Florida </p>
+          </div>
+          <div id="edu-date">
+            <i class="far fa-calendar-alt"></i>
+            <p> December 2020 </p>
+          </div>
+        </div>
+
+        <ul>
+          <li>Lorem ipsum</li>
+          <li>dolar sit</li>
+          <li>amet consecteur</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="fadeInSection">
+      <div id="skills" class="header-div">
+        <h1> Skills </h1>
+
+        <h4> DO COOL STUFF HERE</h4>
+        <h4 id="likethis"> LIKE THIS </h4>
+        <h4 id="orthis"> OR THIS </h4>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, facere magnam quam vero enim praesentium atque libero! Veniam, mollitia nulla, magni, eveniet temporibus rerum exercitationem odio a accusamus veritatis totam?</p>
+      </div>
+    </section>
+</main>
+
 </body>
