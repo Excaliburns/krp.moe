@@ -22,3 +22,7 @@ $(document).on("scroll", function () {
         }
     }
 });
+
+$(document).on('click', '#skill-dots-toggle', function (event) {
+    $('.skill-dots').slideToggle();
+});

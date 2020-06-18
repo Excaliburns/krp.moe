@@ -41,6 +41,10 @@ main {
     padding: 1rem;
 }
 
+li {
+    padding-bottom: 6px;
+}
+
 .subheading-spacing {
     margin-top: 3rem;
 }
@@ -109,6 +113,10 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
+    background-image: url("../img/L02B1326.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .profile-image-text {
@@ -254,4 +262,46 @@ main {
     50% {
         font-size: 30px;
     }
+}
+
+#email {
+    font-size: 16px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.dot {
+    height: 18px;
+    width: 18px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    animation-name: slideInFromLeft;
+    line-height: 50px;
+  }
+  .dot-filled {
+    height: 18px;
+    width: 18px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 50px;
+  }
+
+  .skill-dots {
+      display:none;
+  }
+
+  @keyframes slideInFromLeft {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+          transform: translate(0);
+      }
+  }
+
+.td-space-left {
+    padding-left: 1rem;
 }
