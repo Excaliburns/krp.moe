@@ -1,0 +1,39 @@
+:root {
+    font-size: 16px;
+    font-family: 'Quicksand';
+    --bg-1: #2f2f2f;
+    --bg-2: #473158;
+    --bg-3: #32223f;
+    --text-1: #1f1f1f;
+    --text-2: #c269c5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(228, 228, 228);
+    background-color: var(--bg-1);
+}
+
+.wrapper {
+    display: grid;
+    gap: 4rem;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-item {
+    text-align: center;
+    height: fit-content;
+    border-radius: 3px;
+    border: 1px royalblue solid;
+    transition: transform .2s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.1);
+}
+
+ul {
+    list-style-type: none;
+}
