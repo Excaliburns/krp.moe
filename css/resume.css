@@ -1,8 +1,8 @@
 :root {
     font-size: 16px;
-    font-family: 'Quicksand';
-    --bg-1: #2f2f2f;
-    --bg-2: #473158;
+    font-family: 'Open Sans';
+    --bg-1: #dfdfdf;
+    --bg-2: #2f2f2f;
     --bg-3: #32223f;
     --text-1: #1f1f1f;
     --text-2: #c269c5;
@@ -20,7 +20,7 @@ section.fadeInSection {
 body {
     margin: 0;
     padding: 0;
-    color: rgb(228, 228, 228);
+    color: black;
     background-color: var(--bg-1);
 }
 
@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background: #4f4f4f;
+    background: black;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -46,13 +46,14 @@ li {
 }
 
 .subheading-spacing {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .navbar {
     position: fixed;
     background-color: var(--bg-2);
     transition: width 200ms ease;
+    z-index: 40;
 }
 
 .navbar-nav {
@@ -78,7 +79,7 @@ li {
     height: 5rem;
     color: black;
     text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
+    filter: grayscale(100%);
     transition: var(50ms);
 }
 
@@ -104,15 +105,14 @@ li {
 }
 
 .profile {
-    display: flex;
+    display: block;
+    align-items: center;
+    text-align: center;
 }
 
 .profile-image-swapper {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
+    margin: auto;
+    align-self: center;
     background-image: url("../img/L02B1326.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -123,10 +123,11 @@ li {
 .profile-image-text {
     display: block;
     flex-direction: row;
+    align-items: center;
 }
 
 .header-div {
-    margin-top: 7rem;
+    margin-top: 4rem;
     margin-left: 1rem;
 }
 
@@ -182,18 +183,12 @@ li {
 
     .profile-image-swapper {
         height: 250px;
-        width: 250px;
-    }
-
-    .profile-image-text {
-        margin-top: 5rem;
-        margin-left: 1.5rem;
-        max-width: 50vw;
+        width: 350px;
     }
 }
 
 #fsu {
-    color: #CEB888;
+    color: #782F40;
 }
 
 .tiny {
@@ -271,6 +266,7 @@ li {
     font-weight: bold;
     padding-top: 0;
     margin-top: 0;
+    color: black;
 }
 
 .dot {

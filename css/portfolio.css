@@ -17,9 +17,9 @@ body {
 
 .wrapper {
     display: grid;
-    gap: 4rem;
+    gap: 7rem;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 .grid-item {
@@ -31,9 +31,22 @@ body {
 }
 
 .grid-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 ul {
     list-style-type: none;
 }
+
+
+body::-webkit-scrollbar {
+    width: .25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: black;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: rgb(248, 139, 248);
+  }
