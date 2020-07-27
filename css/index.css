@@ -85,15 +85,3 @@ color: white;
     opacity: 1;
   }
 }
-
-body::-webkit-scrollbar {
-  width: .25rem;
-}
-
-body::-webkit-scrollbar-track {
-  background: black;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: rgb(248, 139, 248);
-}
