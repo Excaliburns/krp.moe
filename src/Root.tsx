@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Helmet } from "react-helmet";
 import styled, { createGlobalStyle } from "styled-components";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./Home/HomePage";
+import PortfolioPage from "./Portfolio/PortfolioPage";
+import ResumePage from "./Resume/ResumePage";
 
 // https://coolors.co/2d3047-95b8d1-a2c7e5-d782ba-eeb1d5
 const GlobalStyle = createGlobalStyle`
@@ -37,10 +39,11 @@ const Root = (): JSX.Element => {
             </Helmet>
 
             <Router>
-                <Route path={"/"}>
-                    <HomePage />
-                </Route>
-
+                <Switch>
+                    <Route exact path={"/"} component={HomePage} />
+                    <Route exact path={"/portfolio"} component={PortfolioPage} />
+                    <Route exact path={"/resume"} component={ResumePage} />
+                </Switch>
             </Router>
         </>
     )
