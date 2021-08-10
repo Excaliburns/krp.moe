@@ -6,7 +6,6 @@ import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-ic
 import SocialMediaWrapper from "./SocialMediaWrapper";
 import { useHistory } from "react-router-dom";
 import { animated, config, useSpring } from "react-spring";
-import MessageWriter from "./MessageWriter";
 
 const HomePageWrapper = styled(animated.div)`
   display: grid;
@@ -126,8 +125,6 @@ const HomePage = (): JSX.Element => {
                             size={"3x"}/>
                     </a>
                 </SocialMediaWrapper>
-
-                <MessageWriter />
             </HomePageWrapper>
         </>
     )
