@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from "react-helmet";
 import styled, { createGlobalStyle } from "styled-components";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./Home/HomePage";
 import PortfolioPage from "./Portfolio/PortfolioPage";
 import ResumePage from "./Resume/ResumePage";
@@ -38,13 +38,13 @@ const Root = (): JSX.Element => {
                 <meta name={"description"} content={"Website Content"}/>
             </Helmet>
 
-            <Router>
+            <HashRouter>
                 <Switch>
                     <Route exact path={"/"} component={HomePage} />
                     <Route exact path={"/portfolio"} component={PortfolioPage} />
                     <Route exact path={"/resume"} component={ResumePage} />
                 </Switch>
-            </Router>
+            </HashRouter>
         </>
     )
 }
