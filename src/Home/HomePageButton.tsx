@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { NoStyleButton } from "../Components/CommonComponents";
 
-const HomePageButton = styled.div`
+const HomePageButton = styled(NoStyleButton)`
   grid-column-start: 2;
   grid-column-end: 2;
   
